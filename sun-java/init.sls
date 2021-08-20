@@ -29,6 +29,10 @@ download-jdk-archive:
         until: True
         splay: 10
     {% endif %}
+  cmd.run:
+    - name: sha256sum '{{ archive_file }}'
+  cmd.run:
+    - name: echo '{{ java.source_hash }}'
 
   {%- if java.source_hash %}
 
