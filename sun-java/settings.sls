@@ -24,7 +24,7 @@
   {%- set java_real_home = g.get('java_real_home', p.get('java_real_home', prefix + '/' + version_name + '.jdk/Contents/Home' )) %}
 {% else %}
   {%- set archive = '-linux-x64.tar.gz' %}
-  {%- set default_source_hash = 'sha256=9a5c32411a6a06e22b69c495b7975034409fa1652d03aeb8eb5b6f59fd4594e0' %}
+  {%- set default_source_hash = 'sha256=d97f0f402bd65a9c26aa266246b0894c8d6762e82373377641ca779c46406299' %}
   {%- set group = 'root' %}
   {%- set archive_type = g.get('archive_type', p.get('archive_type', 'tar' )) %}
   {%- set java_home = salt['grains.get']('java_home', salt['pillar.get']('java_home', '/usr/lib/java')) %}
