@@ -24,7 +24,7 @@
   {%- set java_real_home = g.get('java_real_home', p.get('java_real_home', prefix + '/' + version_name + '.jdk/Contents/Home' )) %}
 {% else %}
   {%- set archive = '-linux-x64.tar.gz' %}
-  {%- set default_source_hash = 'sha256=d97f0f402bd65a9c26aa266246b0894c8d6762e82373377641ca779c46406299' %}
+  {%- set default_source_hash = 'sha256=f87ea91eb825ee45366f2653d97f8ca96527809a37982bad8fff19a2eaf3cd42' %}
   {%- set group = 'root' %}
   {%- set archive_type = g.get('archive_type', p.get('archive_type', 'tar' )) %}
   {%- set java_home = salt['grains.get']('java_home', salt['pillar.get']('java_home', '/usr/lib/java')) %}
@@ -34,7 +34,7 @@
 {% endif %}
   {%- set tmpdir    = g.get('tmpdir', p.get('tmpdir', '/tmp/saltstack-formulas/sun-java')) %}
 
-{%- set uri = 'http://download.oracle.com/otn-pub/java/' %}
+{%- set uri = 'https://download.oracle.com/otn-pub/java/' %}
 {%- set default_source_url = uri + 'jdk/' + release + 'u' + minor + build + dirhash + '/jdk-' + release + 'u' + minor + archive %}
 {%- set default_jce_url    = uri + 'jce/' + release + '/jce_policy-' + release + '.zip' %}
 {%- set default_dl_opts      = '-b oraclelicense=accept-securebackup-cookie -L -s' %}
